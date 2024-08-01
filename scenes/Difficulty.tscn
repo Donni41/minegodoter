@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkldhd41irygo"]
+
+[ext_resource type="Script" path="res://scenes/Difficulty.gd" id="1_1gf8n"]
+[ext_resource type="Texture2D" uid="uid://brfnspaocjy7e" path="res://assets/photo_2024-07-30_09-46-29.jpg" id="2_jpy48"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gf8n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 750.0
+offset_bottom = 750.0
+texture = ExtResource("2_jpy48")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Easy" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Easy"
+
+[node name="Medium" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Medium"
+
+[node name="Hard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hard"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="mouse_entered" from="VBoxContainer/Easy" to="." method="_on_easy_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Medium" to="." method="_on_medium_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Medium" to="." method="_on_medium_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Hard" to="." method="_on_hard_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Hard" to="." method="_on_hard_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
